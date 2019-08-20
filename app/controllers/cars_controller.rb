@@ -6,10 +6,10 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     @user = current_user
+    @user = User.last
     @car.user = @user
     @car.save
-    raise
-    redirect_to_cars_path
+    redirect_to cars_path(@car)
   end
 
   def index
@@ -24,6 +24,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand, :model, :year, :origin, :location, :user_id)
+    params.require(:car).permit(:brand, :model, :year, :origin, :location, :photo)
   end
 end

@@ -2,7 +2,7 @@
 <div class="row d-flex justify-content-center">
   <% @cars.each do |car| %>
     <div class="card w-25 shadow p-3 mb-5 bg-light rounded mt-3 mx-1 ">
-      <img class="card-img-top" src="https://images.unsplash.com/photo-1524102724373-bcf6ed410592?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=737&q=80" alt="Card image cap">
+    <%= cl_image_tag car.photo, class: "card-img-top", height: 300, width: 300, crop: :fill %>
       <div class="card-body">
         <h4 class="card-title"><%= car.brand %></h4>
         <h4 class="card-title"><%= car.model %></h4>
@@ -13,3 +13,5 @@
   <% end %>
   </div>
 </div>
+
+
