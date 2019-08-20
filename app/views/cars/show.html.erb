@@ -3,24 +3,44 @@
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1524102724373-bcf6ed410592?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=737&q=80')">
     <h2><%= @car.brand %> <%= @car.model %> </h2>
   </div>
-  <div class="container">
-    <h2>Car Details</h2>
-    <ul>
-      <li><%= @car.brand %></li>
-      <li><%= @car.year %></li>
-      <li><%= @car.origin %></li>
-      <li><%= @car.location %></li>
-    </ul>
+  <div class="row">
+    <div class="col-8">
+      <h2>Car Details</h2>
+      <ul>
+        <li><%= @car.brand %></li>
+        <li><%= @car.year %></li>
+        <li><%= @car.origin %></li>
+        <li><%= @car.location %></li>
+      </ul>
+    </div>
+    <div class="col-4">
+      <h2>Car Owner</h2>
+      <ul>
+        <li><%= @car.user.first_name %></li>
+        <li><%= @car.user.last_name %></li>
+        <li>Email: <%= @car.user.email %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <h2>Review</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque eum architecto, non quo cumque facere sunt natus adipisci ullam reprehenderit reiciendis corporis sapiente. Odio iusto, tempore nihil eaque perspiciatis natus.</p>
+    </div>
+    <div class="col-4">
+      <h2>Bookings</h2>
+      <%= simple_form_for [@car, @booking] do |f| %>
+      <%= f.input :date %>
+      <%= f.submit "Book now" %>
+      <% end %>
+    </div>
   </div>
   <div class="container">
-    <h2>Car Owner</h2>
+    <h2>Booking Table</h2>
+    <% @car.bookings.each do |booking| %>
     <ul>
-      <li><%= @car.user.first_name %></li>
-      <li><%= @car.user.last_name %></li>
-      <li>Email: <%= @car.user.email %></li>
+      <li><%= booking.date %></li>
     </ul>
-  </div>
-  <div class="container">
-    <h2>Review</h2>
+    <% end %>
   </div>
 </div>
