@@ -1,18 +1,13 @@
 class CarsController < ApplicationController
-
- def index
+  def index
     @cars = Car.all
-end
+  end
 
-def show
+  def show
     @car = Car.find(params[:id])
-    @user = current_user
-    @car.user = @user
-    @car.save
-    raise
-    redirect_to_car_path(car)
-    end
-    
+    @booking = Booking.new
+  end
+
   def new
     @car = Car.new
   end
@@ -22,7 +17,7 @@ def show
     @user = current_user
     @car.user = @user
     @car.save
-    redirect_to cars_path(@car)
+    redirect_to car_path(@car)
   end
 
   private
