@@ -1,13 +1,12 @@
 class CarsController < ApplicationController
-
- def index
+  def index
     @cars = Car.all
-end
+  end
 
-def show
+  def show
     @car = Car.find(params[:id])
     @booking = Booking.new
-    end
+  end
 
   def new
     @car = Car.new
