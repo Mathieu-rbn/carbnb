@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   # get 'cars/new', to: 'cars#new'
   # get 'cars'    , to: 'cars#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :cars, only: [:index, :show]
-  resources :users, only: [:show]
+
+  resources :cars, only: [:index, :show] do
+    resources :bookings, only: [:new, :create]
+  end
+    resources :users, only: [:show]
 end
 
 
