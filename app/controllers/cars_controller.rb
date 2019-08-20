@@ -5,9 +5,10 @@ class CarsController < ApplicationController
   end
 
   def create
-    car = Car.new(car_params)
-    car.save
-    # redirect_to_cars_path
+    @car = Car.new(car_params)
+    @car.user = User.last
+    @car.save
+    redirect_to cars_path
   end
 
   def index
