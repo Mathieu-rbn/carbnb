@@ -1,4 +1,5 @@
 class CarsController < ApplicationController
+
   def new
     car = Car.new
   end
@@ -7,6 +8,14 @@ class CarsController < ApplicationController
     car = Car.new(car_params)
     car.save
     # redirect_to_cars_path
+  end
+
+  def index
+    @cars = Car.all
+  end
+
+  def show
+    @car = Car.find(params[:id])
   end
 
   private
