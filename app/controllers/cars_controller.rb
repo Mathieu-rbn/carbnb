@@ -1,5 +1,8 @@
 class CarsController < ApplicationController
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5d8e8b8df9cbabc6432a22be7663f7b40ae8768a
   def new
     car = Car.new
   end
@@ -17,6 +20,15 @@ class CarsController < ApplicationController
 
   def show
     @car = Car.find(params[:id])
+  end
+
+  def index
+    @cars = Car.all
+  end
+
+  def show
+    @car = Car.find(params[:id])
+    @booking = Booking.new
   end
 
   private
