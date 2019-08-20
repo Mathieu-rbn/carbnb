@@ -9,6 +9,14 @@ class CarsController < ApplicationController
     # redirect_to_cars_path
   end
 
+  def index
+    @cars = Car.all
+  end
+
+  def show
+    @car = Car.find(params[:id])
+  end
+  
   private
 
   def car_params
