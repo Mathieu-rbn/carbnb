@@ -1,12 +1,15 @@
 class CarsController < ApplicationController
   def new
-    car = Car.new
+    @car = Car.new
   end
 
   def create
-    car = Car.new(car_params)
-    car.save
-    # redirect_to_cars_path
+    @car = Car.new(car_params)
+    @user = current_user
+    @car.user = @user
+    @car.save
+    raise
+    # redirect_to_car_path(car)
   end
 
   def index
@@ -16,10 +19,10 @@ class CarsController < ApplicationController
   def show
     @car = Car.find(params[:id])
   end
-  
+
   private
 
   def car_params
-    params.require(:car).permit(:brand, :model, :year, :origin, :location)
+    params.require(:car).permit(:brand, :model, :year, :origin, :location, :user_id)
   end
 end
