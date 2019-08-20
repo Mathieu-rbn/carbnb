@@ -1,6 +1,6 @@
 <h2>Please list your vintage car below</h2>
 
-<%= form_for Car.new do |f| %>
+<%= simple_form_for @car do |f| %>
 
 <div class="form-group">
     <%= f.label :user_id %>
@@ -32,5 +32,9 @@
     <%= f.text_field :location, class: 'form-control' %>
   </div>
 
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+  <div class="form-group">
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit "Save", class: "btn btn-secondary" %>
+  </div>
+ <% end %>
