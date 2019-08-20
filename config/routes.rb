@@ -10,6 +10,13 @@ Rails.application.routes.draw do
   resources :cars, only: [:index, :show] do
     resources :bookings, only: [:new, :create]
   end
+
+  resources :bookings, only: [] do
+    resources :reviews, only: [:new, :create]
+  end
+
+  # get 'bookings/:booking_id/reviews/new', to: "reviews#new"
+  # post 'bookings/:booking_id/reviews/', to: "reviews#create"
 end
 
 
