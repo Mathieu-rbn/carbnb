@@ -9,7 +9,7 @@ class CarsController < ApplicationController
     @car.user = @user
     @car.save
     raise
-    # redirect_to_car_path(car)
+    redirect_to_cars_path
   end
 
   def index
