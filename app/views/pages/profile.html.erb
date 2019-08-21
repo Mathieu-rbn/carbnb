@@ -1,0 +1,13 @@
+<div class="container">
+  <br>
+  <div>
+    <h2>User Profile of <%= @user.first_name %> <%= @user.last_name %> </h2>
+    <br>
+    <h3>User Details</h3>
+    <div class="container mt-3">
+      <ul>
+        <li><i class="fas fa-user-friends"></i> <%= @user.user_name %></li>
+        <li><i class="fas fa-envelope-open-text"></i> <%= @user.email %></li>
+      </ul>
+    </div>
+</div>
