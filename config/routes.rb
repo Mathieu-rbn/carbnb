@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'users/show'
   devise_for :users
   root to: 'pages#home'
+  get "/profile", to: 'pages#profile'
 
   resources :cars, only: [:new, :create]
 
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [] do
     resources :reviews, only: [:new, :create]
   end
-    resources :users, only: [:show]
+    resources :users, only: [:show, :edit, :update]
 end
 
 
