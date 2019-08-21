@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1488610883421-64eb350d7f12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1089&q=80);">
+  <div class="container">
+  <h1>Vintago.</h1>
+  <p>Change your life, drive classic.</p>
+  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <div class="search-form-control form-group">
+      <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Berlin, Hamburg" />
+      <button name="button" type="submit" class="btn btn-danger">
+      <i class="fas fa-search"></i> Search
+      </button>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <h2>How it works</h2>
+  <div class="row">
+    <div class="col-4">
+      <i class="fas fa-search-location"></i>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nulla iure quaerat quisquam cum tenetur accusamus nihil odit iste similique, quod ducimus ab quibusdam doloribus suscipit nobis velit nostrum commodi.
+    </div>
+    <div class="col-4">
+      <i class="fas fa-magic"></i>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nulla iure quaerat quisquam cum tenetur accusamus nihil odit iste similique, quod ducimus ab quibusdam doloribus suscipit nobis velit nostrum commodi.
+    </div>
+    <div class="col-4">
+      <i class="fas fa-car"></i>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nulla iure quaerat quisquam cum tenetur accusamus nihil odit iste similique, quod ducimus ab quibusdam doloribus suscipit nobis velit nostrum commodi.
+    </div>
+  </div>
+</div>
