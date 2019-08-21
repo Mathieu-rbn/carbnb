@@ -2,10 +2,18 @@
 <div class="row d-flex justify-content-center">
   <% @cars.each do |car| %>
     <div class="card w-25 shadow p-3 mb-5 bg-light rounded mt-3 mx-1 ">
-    <%= cl_image_tag car.photo, class: "card-img-top", height: 300, width: 300, crop: :fill %>
+    <% if car.photo != nil %>
+    <%#= cl_image_path car.photo, class: "card-img-top", height: 300, width: 300, crop: :fill %>
+    <%= cl_image_tag(car.photo, class: "card-img-top", height: 300, width: 400, crop: :fill,crop: :thumb, gravity: :face) %>
+    <% else %>
+    <% end %>
       <div class="card-body">
-        <h4 class="card-title"><%= car.brand %></h4>
-        <h4 class="card-title"><%= car.model %></h4>
+        <h4 class="card-title"><%= car.brand %> <%= car.model %></h4>
+        <ul>
+          <li>From price per day</li>
+          <li><%= car.location %></li>
+        </ul>
+          <%= link_to "Details", car_path(car), class: "btn btn-primary btn-sm" %>
         <div class="btn-group btn-group-sm d-flex align-items-end" role="group" aria-label="Basic example">
         </div>
       </div>
