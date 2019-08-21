@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>My Bookings</h2>
+  <div class="row d-flex justify-content-center">
+    <% @bookings.each do |booking| %>
+      <div class="card w-45 shadow p-3 mb-5 bg-light rounded mt-3 mx-1 ">
+        <% if booking.car.photo != nil %>
+    <%#= cl_image_path car.photo, class: "card-img-top", height: 300, width: 300, crop: :fill %>
+          <%= cl_image_tag(booking.car.photo, class: "card-img-top", height: 300, width: 400, crop: :fill,crop: :thumb, gravity: :face) %>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title"> Date: <%= booking.date %> in <%= booking.car.location %></h4>
+          <ul>
+            <li>Booking details</li>
+            <li>Brand: <%= booking.car.brand %></li>
+            <li>Model: <%= booking.car.model %></li>
+            <li>Year: <%= booking.car.year %></li>
+            <li>Origin: <%= booking.car.origin %></li>
+            <li>Status: Available </li>
+          </ul>
+      </div>
+     <% end %>
+  </div>
+</div>
+
