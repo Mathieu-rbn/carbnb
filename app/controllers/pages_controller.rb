@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @bookings = @user.bookings
+  end
 
   def profile
     @user = current_user
@@ -11,5 +12,4 @@ class PagesController < ApplicationController
 
   def home
   end
-    
 end
