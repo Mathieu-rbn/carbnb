@@ -8,10 +8,11 @@
     <div class="col-8">
       <h2>Car Details</h2>
       <ul>
-        <li><%= @car.brand %></li>
-        <li><%= @car.year %></li>
-        <li><%= @car.origin %></li>
-        <li><%= @car.location %></li>
+        <li><i class="fas fa-car mr-2" ></i><%= @car.brand %></li>
+        <li><i class="fas fa-hammer mr-2"></i><%= @car.year %></li>
+        <li><i class="fas fa-flag-usa mr-2"></i><%= @car.origin %></li>
+        <li><i class="fas fa-map-marker-alt mr-2"></i><%= @car.location %></li>
+        <li><%= @car.price %></li>
       </ul>
     </div>
     <div class="col-4">
@@ -38,14 +39,15 @@
       <%= f.input :date %>
       <%= f.submit "Book now" %>
       <% end %>
-    </div>
-  </div>
-  <div class="container">
+      <br>
     <h2>Booking Table</h2>
     <% @car.bookings.each do |booking| %>
     <ul>
       <li><%= booking.date %></li>
     </ul>
     <% end %>
+    </div>
+  </div>
+  <div class="container">
   </div>
 </div>

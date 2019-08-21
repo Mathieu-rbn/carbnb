@@ -20,9 +20,29 @@ class CarsController < ApplicationController
     redirect_to car_path(@car)
   end
 
+  def edit
+    @car = Car.find(params[:id])
+  end
+
+  def update
+    @car = Car.find(params[:id])
+    @car.update(car_params)
+    redirect_to car_path(@car)
+  end
+
+  def delete
+    @car = Car.find(params[:id])
+    @car.destroy
+    redirect_to car_path(@car)
+  end
+
   private
 
   def car_params
-    params.require(:car).permit(:brand, :model, :year, :origin, :location, :photo, :user_id)
+    params.require(:car).permit(:brand, :model, :year, :origin, :location, :photo, :user_id, :remote_photo_url, :price)
   end
+
+  # def set_cars
+  #   @car = Car.find(params[:id])
+  # end
 end
