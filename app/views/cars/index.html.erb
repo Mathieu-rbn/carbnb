@@ -10,7 +10,7 @@
       <div class="card-body">
         <h4 class="card-title"><%= car.brand %> <%= car.model %></h4>
         <ul>
-          <li>car.price</li>
+          <li><%= car.price %></li>
           <li><%= car.location %></li>
         </ul>
           <%= link_to "Details", car_path(car), class: "btn btn-primary btn-sm" %>
