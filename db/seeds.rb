@@ -25,20 +25,21 @@
     Car.create!(user_id: User.first.id, brand:"Jaguar", model:"E-Type", origin:"British", year:"1962",address: "Pariser Platz, 10117 Berlin",location:"Berlin",  price:"1O00 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566465531/New_pics/English/jaguar_E_type_Serie_2.jpg")
     Car.create!(user_id: User.first.id, brand:"Triumph", model:"TR-5", origin:"British", year:"1967",address: "Muehlenstr. 3, 10243 Berlin",location:"Berlin",  price:"300 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566465778/New_pics/English/Triumph_TR5_1967_nsoqyy.jpg")
 
+
     # FRENCH
 
-    Car.create!(user_id: User.first.id, brand:"Peugeot", model:"304", origin:"French", year:"1969", location:"Berlin", price:"250 euros", remote_photo_url: "https://res.cloudinary.com/mathieurobin1/image/upload/v1566465128/New_pics/French/Peugeot_304_Back_uxm6of.jpg")
-    Car.create!(user_id: User.first.id, brand:"Citroen", model:"DS", origin:"French", year:"1962",location:"Berlin", price:"250 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566466037/New_pics/French/citroen-ds-cabriolet_19_ld5yt2.jpg")
+    Car.create!(user_id: User.first.id, brand:"Peugeot", model:"304", origin:"French", year:"1969", address:"Berlin", price:"250 euros", remote_photo_url: "https://res.cloudinary.com/mathieurobin1/image/upload/v1566465128/New_pics/French/Peugeot_304_Back_uxm6of.jpg")
+    Car.create!(user_id: User.first.id, brand:"Citroen", model:"DS", origin:"French", year:"1962",address:"Berlin", price:"250 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566466037/New_pics/French/citroen-ds-cabriolet_19_ld5yt2.jpg")
 
     # GERMAN
-    Car.create!(user_id: User.first.id, brand:"Mercedes", model:"300 SL", origin:"German", year:"1955",location:"Berlin",  price:"1500 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566333620/mercedes-300-sl-web_mdi53p.jpg")
-    Car.create!(user_id: User.first.id, brand:"Volkswagen", model:"Cox", origin:"German", year:"1963", location:"Berlin", price:"250 euros", remote_photo_url: "https://res.cloudinary.com/mathieurobin1/image/upload/v1566465127/New_pics/German/VW_Beetle_1_js196w.jpg")
-    Car.create!(user_id: User.first.id, brand:"Volkswagen", model:"Combi", origin:"German", year:"1963",location:"Berlin", price:"250 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566465127/New_pics/German/VW_Combi_xvvhcq.jpg")
+    Car.create!(user_id: User.first.id, brand:"Mercedes", model:"300 SL", origin:"German", year:"1955",address:"Berlin",  price:"1500 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566333620/mercedes-300-sl-web_mdi53p.jpg")
+    Car.create!(user_id: User.first.id, brand:"Volkswagen", model:"Cox", origin:"German", year:"1963", address:"Berlin", price:"250 euros", remote_photo_url: "https://res.cloudinary.com/mathieurobin1/image/upload/v1566465127/New_pics/German/VW_Beetle_1_js196w.jpg")
+    Car.create!(user_id: User.first.id, brand:"Volkswagen", model:"Combi", origin:"German", year:"1963",address:"Berlin", price:"250 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566465127/New_pics/German/VW_Combi_xvvhcq.jpg")
 
     # ITALIAN
-    Car.create!(user_id: User.first.id, brand:"Ferrari ", model:"250 GT", origin:"Italian", year:"1962", location:"Berlin", price:"7500 euros", remote_photo_url: "https://res.cloudinary.com/mathieurobin1/image/upload/v1566465130/New_pics/Italian/Ferrari_250_Cabrio_mx5pqo.jpg")
-    Car.create!(user_id: User.first.id, brand:"Fiat", model:"500", origin:"Italian", year:"1963",location:"Berlin", price:"250 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566465129/New_pics/Italian/Fiat_500_yxzlzy.jpg")
-    Car.create!(user_id: User.first.id, brand:"Ferrari", model:"212", origin:"Italian", year:"1951",location:"Berlin",  price:"5000 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566466442/New_pics/Italian/FERRARI_212_TOURING_BARCHETTA_1951_1953_vziepz.jpg")
+    Car.create!(user_id: User.first.id, brand:"Ferrari ", model:"250 GT", origin:"Italian", year:"1962", address:"Berlin", price:"7500 euros", remote_photo_url: "https://res.cloudinary.com/mathieurobin1/image/upload/v1566465130/New_pics/Italian/Ferrari_250_Cabrio_mx5pqo.jpg")
+    Car.create!(user_id: User.first.id, brand:"Fiat", model:"500", origin:"Italian", year:"1963",address:"Berlin", price:"250 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566465129/New_pics/Italian/Fiat_500_yxzlzy.jpg")
+    Car.create!(user_id: User.first.id, brand:"Ferrari", model:"212", origin:"Italian", year:"1951",address:"Berlin",  price:"5000 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566466442/New_pics/Italian/FERRARI_212_TOURING_BARCHETTA_1951_1953_vziepz.jpg")
 
     puts "created cars"
 
