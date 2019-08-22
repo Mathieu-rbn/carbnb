@@ -1,7 +1,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 100px;
+  height: 370px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,11 +13,14 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
 .card-car-owner {
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
 }

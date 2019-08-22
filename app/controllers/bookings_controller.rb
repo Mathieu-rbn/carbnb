@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @car = Car.find(params[:car_id])
     @booking.car = @car
-    @booking.user = User.last
+    @booking.user = current_user
     @booking.save
     sleep 1
     redirect_to dashboard_path
@@ -29,6 +29,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :start_date, :end_date, :status)
+    params.require(:booking).permit(:start_date, :end_date, :status, :user_id, :car_id)
   end
 end
