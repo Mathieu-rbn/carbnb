@@ -33,21 +33,37 @@
         <% end %>
       <% end %>
     </div>
-    <div class="col-4">
+<!--     <div class="col-4">
       <h2>Bookings</h2>
       <%= simple_form_for [@car, @booking] do |f| %>
       <%= f.input :date %>
       <%= f.submit "Book now" %>
       <% end %>
-      <br>
-    <h2>Booking Table</h2>
-    <% @car.bookings.each do |booking| %>
-    <ul>
-      <li><%= booking.date %></li>
-    </ul>
-    <% end %>
-    </div>
-  </div>
-  <div class="container">
-  </div>
-</div>
+ -->
+
+   <div class="booking-form">
+      <form>
+
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <span class="form-label">Start date</span>
+                        <input class="form-control" type="date" required="">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <span class="form-label">End date</span>
+                        <input class="form-control" type="date" required="">
+                      </div>
+                    </div>
+                  </div>
+  <!--
+                        <span class="select-arrow"></span>
+                      </div> -->
+                  <div class="form-btn">
+                    <button class="submit-btn">Check availability</button>
+                  </div>
+                </form>
+              </div>
+
