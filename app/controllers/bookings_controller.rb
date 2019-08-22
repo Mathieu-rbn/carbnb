@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.user = User.last
     @booking.save
     sleep 1
-    redirect_to car_path(@car)
+    redirect_to dashboard_path
   end
 
   def show
