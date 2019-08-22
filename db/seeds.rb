@@ -20,10 +20,10 @@
 
 
     # ENGLISH
-    Car.create!(user_id: User.first.id, brand:"Aston Martin", model:"DB5", origin:"British", year:"1963", location:"Berlin", price:"1500 euros", remote_photo_url: "https://res.cloudinary.com/mathieurobin1/image/upload/v1566333620/Aston_Martin_DB5_tnmdi5.jpg", content: "This amazing Aston Martin will provide you the best experience for a perfect event")
-    Car.create!(user_id: User.first.id, brand:"MG", model:"B", origin:"British", year:"1963",location:"Berlin", price:"500 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566465059/New_pics/MG_B_fcv4id.jpg")
-    Car.create!(user_id: User.first.id, brand:"Jaguar", model:"E-Type", origin:"British", year:"1962",location:"Berlin",  price:"1O00 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566465531/New_pics/English/jaguar_E_type_Serie_2.jpg")
-    Car.create!(user_id: User.first.id, brand:"Triumph", model:"TR-5", origin:"British", year:"1967",location:"Berlin",  price:"300 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566465778/New_pics/English/Triumph_TR5_1967_nsoqyy.jpg")
+    Car.create!(user_id: User.first.id, brand:"Aston Martin", model:"DB5", origin:"British", year:"1963", address: "Rudi-Dutschke-Str. 26, 10969 Berlin", location:"Berlin", price:"1500 euros", remote_photo_url: "https://res.cloudinary.com/mathieurobin1/image/upload/v1566333620/Aston_Martin_DB5_tnmdi5.jpg", content: "This amazing Aston Martin will provide you the best experience for a perfect event")
+    Car.create!(user_id: User.first.id, brand:"MG", model:"B", origin:"British", year:"1963",address: "Großer Stern, 10557 Berlin",location:"Berlin", price:"500 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566465059/New_pics/MG_B_fcv4id.jpg")
+    Car.create!(user_id: User.first.id, brand:"Jaguar", model:"E-Type", origin:"British", year:"1962",address: "Pariser Platz, 10117 Berlin",location:"Berlin",  price:"1O00 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566465531/New_pics/English/jaguar_E_type_Serie_2.jpg")
+    Car.create!(user_id: User.first.id, brand:"Triumph", model:"TR-5", origin:"British", year:"1967",address: "Muehlenstr. 3, 10243 Berlin",location:"Berlin",  price:"300 euros", remote_photo_url:"https://res.cloudinary.com/mathieurobin1/image/upload/v1566465778/New_pics/English/Triumph_TR5_1967_nsoqyy.jpg")
 
     # FRENCH
 
