@@ -18,6 +18,7 @@
             <li>Origin: <%= booking.car.origin %></li>
             <li>Status: Available </li>
           </ul>
+          <%= link_to "Add Review",  new_booking_review_path(booking) %>
       </div>
       <%= link_to "Add review", new_booking_review_path(booking) %>
      <% end %>
