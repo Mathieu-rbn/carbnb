@@ -1,20 +1,30 @@
 <div class="container">
 <div class="row">
   <div class="col-8">
+    <div class="container p-0 mt-3">
+        <%= simple_form_for :search, url: cars_path, method: :get do |f| %>
+          <div class="search-form-control form-group w-100>
+            <%= form_tag cars_path, method: :get do %> <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "find a car" %> <%= submit_tag "Search", class: "btn btn-danger" %> <% end %>
+            <button name="button" type="submit" class="btn btn-danger">
+            <i class="fas fa-search"></i> Search
+            </button>
+          </div>
+    </div>
   <div class="row">
+    <% end %>
   <% @cars.each do |car| %>
     <div class="card shadow p-3 bg-light rounded  mx-3 mt-3 col-5">
-    <%= cl_image_tag(car.photo, class: "card-img-top", height: 200, crop: :scale) %>
+      <%= link_to cl_image_tag(car.photo, class: "card-img-top", height: 200, crop: :scale), car_path(car) %>
       <div class="card-body">
-        <h4 class="card-title"><%= car.brand %> <%= car.model %></h4>
-         <div class="container">
-         <p>
-            <!-- <i class="fas fa-car mr-2" ></i><%= car.brand %> | -->
-            <i class="fas fa-hammer mr-2"></i><%= car.year %> |
-            <i class="fas fa-dollar-sign mr-2"></i><%= car.price %> <!-- per day -->
-          </p>
-            <%= link_to "View Car", car_path(car), class: "btn btn-danger btn-sm" %>
+        <h4 class="card-title text-center"><%= car.brand %> <%= car.model %></h4>
+         <div class="container p-0">
+          <ul>
+            <i class="far fa-calendar-alt mr-2 ml-2"></i><%= car.year %>
+            <i class="fas fa-euro-sign mr-2 ml-2"></i><%= car.price %>
+            <i class="fas fa-flag-usa mr-2 ml-2"></i><%= car.origin %>
+            </ul>
           </div>
+            <%= link_to "More Details", car_path(car), class: "btn btn-danger btn-block btn-sm mt-2" %>
         <div class="btn-group btn-group-sm d-flex align-items-end" role="group" aria-label="Basic example">
         </div>
       </div>

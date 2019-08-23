@@ -8,7 +8,14 @@ class CarsController < ApplicationController
           infoWindow: render_to_string(partial: "info_window", locals: { car: car })
         }
       end
+
+      if params[:query].present?
+        @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%")
+      else
+        @cars = Car.all
+      end
   end
+
 
   def show
     @booking = Booking.new
