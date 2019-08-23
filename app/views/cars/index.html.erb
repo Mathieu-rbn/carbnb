@@ -4,7 +4,7 @@
     <div class="container p-0 mt-3">
         <%= simple_form_for :search, url: cars_path, method: :get do |f| %>
           <div class="search-form-control form-group w-100>
-            <%= form_tag cars_path, method: :get do %> <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "find a car" %> <%= submit_tag "Search", class: "btn btn-danger" %> <% end %>
+            <%= form_tag cars_path, method: :get do %> <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "type the brand" %> <%= submit_tag "Search", class: "btn btn-danger" %> <% end %>
             <button name="button" type="submit" class="btn btn-danger">
             <i class="fas fa-search"></i> Search
             </button>
