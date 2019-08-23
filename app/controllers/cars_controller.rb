@@ -5,21 +5,14 @@ class CarsController < ApplicationController
 
         {
           lat: car.latitude,
-          lng: car.longitude,
-          #infoWindow: render_to_string(partial: “info_window”, locals: { car: car })
+          lng: car.longitude
         }
       end
-
   end
 
   def show
-    # @car = Car.find(params[:id])
     @car = Car.find(params[:id])
-    @markers = [{
-        lat: @car.latitude,
-        lng: @car.longitude,
-        #infoWindow: render_to_string(partial: “info_window”, locals: { car: @car })
-    }]
+    @booking = Booking.new
   end
 
   def new
