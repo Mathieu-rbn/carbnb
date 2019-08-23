@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/profile", to: 'pages#profile'
 
-  resources :cars, only: [:new, :create, :edit, :update,  :delete]
+  resources :cars, only: [:new, :show, :create, :edit, :update,  :delete]
 
-  resources :cars, only: [:index, :show] do
+  resources :cars, only: [:index] do
     resources :bookings, only: [:new, :create, :index]
   end
 
