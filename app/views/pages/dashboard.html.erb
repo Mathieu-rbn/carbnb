@@ -1,5 +1,8 @@
 <div class="container">
-  <h2>My Bookings</h2>
+  <br>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
+  My Bookings
+</div>
   <div class="row d-flex justify-content-center">
     <% @bookings.each do |booking| %>
       <div class="card w-45 shadow p-3 mb-5 bg-light rounded mt-3 mx-1 ">
@@ -7,20 +10,23 @@
     <%#= cl_image_path car.photo, class: "card-img-top", height: 300, width: 300, crop: :fill %>
           <%= cl_image_tag(booking.car.photo, class: "card-img-top", height: 300, width: 400, crop: :fill,crop: :thumb, gravity: :face) %>
         <% end %>
+        <div class="card-body w-45 p-3 mb-5 bg-light rounded mt-3 mx-1">
+        <h4>Start date: <%= booking.start_date%></h4>
+        <h4>End date: <%= booking.end_date%></h4>
+        <ul>
+          <li><i class="fas fa-car mr-2"></i><%= booking.car.brand %></li>
+          <li><i class="fas fa-car-side mr-2"></i><%= booking.car.model %></li>
+          <li><i class="fas fa-hammer mr-2"></i><%= booking.car.year %></li>
+          <li><i class="fas fa-flag-usa mr-2"></i><%= booking.car.origin %></li>
+          <li><i class="fas fa-sync-alt mr-2"></i>Status: Available </li>
+        </ul>
+        <div class="card-body" align="center">
+        <%= link_to "Add Review", new_booking_review_path(booking), class: "btn btn-danger btn-block" %>
+        <%= link_to "Car Details", new_booking_review_path(booking), class: "btn btn-danger btn-block" %>
+        </div>
       </div>
-      <div class="card-body">
-        <h4 class="card-title"> Date: <%= booking.start_date%> in <%= booking.car.location %></h4>
-          <ul>
-            <li>Booking details</li>
-            <li>Brand: <%= booking.car.brand %></li>
-            <li>Model: <%= booking.car.model %></li>
-            <li>Year: <%= booking.car.year %></li>
-            <li>Origin: <%= booking.car.origin %></li>
-            <li>Status: Available </li>
-          </ul>
-          <%= link_to "Add Review",  new_booking_review_path(booking), class: "btn btn-danger" %>
       </div>
-     <% end %>
+    <% end %>
   </div>
 </div>
 

@@ -1,5 +1,6 @@
 <div class="container py-3">
   <br>
+
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @car.photo, height: 300, crop: :scale %>')">
 
     <h2><%= @car.brand %> <%= @car.model %> </h2>
@@ -7,6 +8,20 @@
   <br>
   <div class="row">
     <div class="col-8">
+      <div class="card p-3 mb-3">
+        <h2>
+          <strong>Car Details</strong>
+        </h2>
+        <br>
+        <p>
+          <i class="fas fa-car mr-2" ></i><%= @car.brand %> |
+          <i class="fas fa-hammer mr-2"></i><%= @car.year %> |
+          <i class="fas fa-flag-usa mr-2"></i><%= @car.origin %> |
+          <i class="fas fa-map-marker-alt mr-2"></i><%= @car.location %> |
+          <i class="fas fa-euro-sign mr-2"></i><%= @car.price %> per day
+        </p>
+        <p><%=@car.content%></p>
+      </div>
         <div class="card p-3 mb-3">
           <div class="card-car-owner">
             <img src="https://uidesign.gbtcdn.com/gb_blog/author/Steve-Lowry-2.png" />
@@ -22,26 +37,12 @@
         </div>
         <div class="card p-3 mb-3">
           <h2>
-            <strong>Car Details</strong>
-          </h2>
-          <br>
-          <p>
-            <i class="fas fa-car mr-2" ></i><%= @car.brand %> |
-            <i class="fas fa-hammer mr-2"></i><%= @car.year %> |
-            <i class="fas fa-flag-usa mr-2"></i><%= @car.origin %> |
-            <i class="fas fa-map-marker-alt mr-2"></i><%= @car.location %> |
-            <i class="fas fa-dollar-sign mr-2"></i><%= @car.price %> per day
-          </p>
-          <p><%=@car.content%></p>
-        </div>
-        <div class="card p-3 mb-3">
-          <h2>
             <strong>Reviews</strong>
           </h2>
           <br>
           <% @car.bookings.each do |booking| %>
             <% booking.reviews.each do |review| %>
-              <li><%= review.content %>  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></li>
+              <li><%= review.content %></li>
             <% end %>
           <% end %>
         </div>
