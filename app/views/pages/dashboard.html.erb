@@ -12,7 +12,7 @@
     <%#= cl_image_path car.photo, class: "card-img-top", height: 300, width: 300, crop: :fill %>
           <%= link_to cl_image_tag(booking.car.photo, class: "card-img-top", height: 300, width: 400, crop: :fill,crop: :thumb, gravity: :face), car_path(booking.car) %>
         <% end %>
-
+  </div>
         <div class="card-body w-45 p-3 mb-5 bg-light rounded mt-3 mx-1">
         <h4>Start date: <%= booking.start_date%></h4>
         <h4>End date: <%= booking.end_date%></h4>
