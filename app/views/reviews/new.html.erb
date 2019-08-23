@@ -1,7 +1,7 @@
-<h1>Add your Review</h1>
-<div class="container w-50">
-<%= simple_form_for [@booking, @review] do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "Save" %>
-<% end %>
+<div class="container w-50 mt-3">
+  <h2><strong>Add your Review</strong></h2>
+      <%= simple_form_for [@booking, @review] do |f| %>
+        <%= f.input :content, as: :text, rows: 50, placeholder: "Please provide a review :-)" %>
+        <%= f.submit "Save", class: "btn btn-danger" %>
+      <% end %>
 </div>
