@@ -2,10 +2,10 @@ class CarsController < ApplicationController
   def index
     @cars = Car.geocoded
       @markers = @cars.map do |car|
-
         {
           lat: car.latitude,
-          lng: car.longitude
+          lng: car.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { car: car })
         }
       end
   end
@@ -15,7 +15,8 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @markers = [{
         lat: @car.latitude,
-        lng: @car.longitude
+        lng: @car.longitude,
+        infoWindow: render_to_string(partial: 'info_window', locals: { car: @car })
     }]
   end
 
