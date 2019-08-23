@@ -1,7 +1,13 @@
 <div class="container">
 <div class="row">
   <div class="col-8">
+
+        <div>
+<%= form_tag cars_path, method: :get do %> <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "find a car" %> <%= submit_tag "Search", class: "btn btn-danger" %> <% end %>
+</div>
+
   <div class="row">
+
   <% @cars.each do |car| %>
     <div class="card shadow p-3 bg-light rounded  mx-3 mt-3 col-5">
     <%= cl_image_tag(car.photo, class: "card-img-top", height: 200, crop: :scale) %>
