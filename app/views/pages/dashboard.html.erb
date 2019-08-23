@@ -8,7 +8,8 @@
       <div class="card w-45 shadow p-3 mb-5 bg-light rounded mt-3 mx-1 ">
         <% if booking.car.photo != nil %>
     <%#= cl_image_path car.photo, class: "card-img-top", height: 300, width: 300, crop: :fill %>
-          <%= cl_image_tag(booking.car.photo, class: "card-img-top", height: 300, width: 400, crop: :fill,crop: :thumb, gravity: :face) %>
+          <%= link_to cl_image_tag(booking.car.photo, class: "card-img-top", height: 300, width: 400, crop: :fill,crop: :thumb, gravity: :face), car_path(booking.car) %>
+
         <% end %>
         <div class="card-body w-45 p-3 mb-5 bg-light rounded mt-3 mx-1">
         <h4>Start date: <%= booking.start_date%></h4>
@@ -22,7 +23,7 @@
         </ul>
         <div class="card-body" align="center">
         <%= link_to "Add Review", new_booking_review_path(booking), class: "btn btn-danger btn-block" %>
-        <%= link_to "Car Details", new_booking_review_path(booking), class: "btn btn-danger btn-block" %>
+        <%= link_to "Car Details", car_path(booking.car), class: "btn btn-danger btn-block" %>
         </div>
       </div>
       </div>
