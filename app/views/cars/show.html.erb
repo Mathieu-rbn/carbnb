@@ -1,7 +1,6 @@
 <div class="container py-3">
   <br>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @car.photo, height: 300, width: 400, crop: :fill %>')">
-
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @car.photo, height: 300, crop: :fill %>')">
     <h2><%= @car.brand %> <%= @car.model %> </h2>
   </div>
   <br>
@@ -42,7 +41,7 @@
           <br>
           <% @car.bookings.each do |booking| %>
             <% booking.reviews.each do |review| %>
-              <li><%= review.content %>  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"> <i>Juan from Lima, Peru</i></i></li>
+              <li><%= review.content %>  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></li>
             <% end %>
           <% end %>
         </div>
@@ -50,6 +49,15 @@
 
     <div class="col-md-6 col-lg-4">
       <div class="card bg-light p-3 mb-3">
+
+
+
+        <h2> <strong> Bookings </strong> </h2>
+          <%= simple_form_for [@car, @booking] do |f| %>
+            <strong><%= f.input :start_date %></strong>
+            <strong><%= f.input :end_date %></strong>
+            <%= f.submit "Book now",  class: "btn btn-danger btn-lg btn-block", "data-toggle": "modal", "data-target": "#exampleModalCenter" %>
+          <% end %>
 
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -69,7 +77,6 @@
           </div>
         </div>
     </div>
-
   </div>
     </div>
     </div>

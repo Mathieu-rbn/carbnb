@@ -4,16 +4,16 @@
   <div class="row">
   <% @cars.each do |car| %>
     <div class="card shadow p-3 bg-light rounded  mx-3 mt-3 col-5">
-    <%= cl_image_tag(car.photo, class: "card-img-top", crop: :thumb) %>
+    <%= cl_image_tag(car.photo, class: "card-img-top", height: 200, crop: :scale) %>
       <div class="card-body">
         <h4 class="card-title"><%= car.brand %> <%= car.model %></h4>
          <div class="container">
          <p>
-            <i class="fas fa-car mr-2" ></i><%= car.brand %> |
+            <!-- <i class="fas fa-car mr-2" ></i><%= car.brand %> | -->
             <i class="fas fa-hammer mr-2"></i><%= car.year %> |
-            <i class="fas fa-dollar-sign mr-2"></i><%= car.price %> per day
+            <i class="fas fa-dollar-sign mr-2"></i><%= car.price %> <!-- per day -->
           </p>
-            <%= link_to "Details", car_path(car), class: "btn btn-danger btn-sm" %>
+            <%= link_to "View Car", car_path(car), class: "btn btn-danger btn-sm" %>
           </div>
         <div class="btn-group btn-group-sm d-flex align-items-end" role="group" aria-label="Basic example">
         </div>
