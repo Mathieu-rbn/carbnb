@@ -12,22 +12,22 @@
     <%#= cl_image_path car.photo, class: "card-img-top", height: 300, width: 300, crop: :fill %>
           <%= link_to cl_image_tag(booking.car.photo, class: "card-img-top", height: 300, width: 400, crop: :fill,crop: :thumb, gravity: :face), car_path(booking.car) %>
         <% end %>
-      </div>
-      <div class="card-body w-45 shadow p-3 mb-5 bg-light rounded mt-3 mx-1">
-          <h4>Start date: <%= booking.start_date%></h4>
-          <h4>End date: <%= booking.end_date%></h4>
-          <ul>
-            <li><i class="fas fa-car mr-2"></i><%= booking.car.brand %></li>
-            <li><i class="fas fa-car-side mr-2"></i><%= booking.car.model %></li>
-            <li><i class="fas fa-hammer mr-2"></i><%= booking.car.year %></li>
-            <li><i class="fas fa-flag-usa mr-2"></i><%= booking.car.origin %></li>
-            <li><i class="fas fa-sync-alt mr-2"></i>Status: Available </li>
-          </ul>
-          <div class="card-body" align="center">
-            <%= link_to "Add Review", new_booking_review_path(booking), class: "btn btn-danger btn-block" %>
-            <%= link_to "Car Details", car_path(booking.car), class: "btn btn-danger btn-block" %>
-          </div>
+
+        <div class="card-body w-45 p-3 mb-5 bg-light rounded mt-3 mx-1">
+        <h4>Start date: <%= booking.start_date%></h4>
+        <h4>End date: <%= booking.end_date%></h4>
+        <ul>
+          <li><i class="fas fa-car mr-2"></i><%= booking.car.brand %></li>
+          <li><i class="fas fa-car-side mr-2"></i><%= booking.car.model %></li>
+          <li><i class="far fa-calendar-alt mr-2 ml-0"></i><%= booking.car.year %></li>
+          <li><i class="fas fa-flag-usa mr-2"></i><%= booking.car.origin %></li>
+          <li><i class="fas fa-sync-alt mr-2"></i>Status: Available </li>
+        </ul>
+        <div class="card-body" align="center">
+        <%= link_to "Add Review", new_booking_review_path(booking), class: "btn btn-danger btn-block" %>
+        <%= link_to "Car Details", car_path(booking.car), class: "btn btn-danger btn-block" %>
         </div>
+      </div>
     <% end %>
   </div>
 </div>
